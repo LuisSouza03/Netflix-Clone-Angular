@@ -6,6 +6,8 @@ export const environment = {
   production: false
 };
 
+
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
@@ -14,3 +16,6 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+export const API_KEY : string = "3f8972ff48c327edd722fe5c343f29d6"
+export const API_URL: string = "https://api.themoviedb.org/3"
