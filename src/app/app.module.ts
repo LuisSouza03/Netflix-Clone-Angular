@@ -1,3 +1,5 @@
+
+import { NetflixComponent } from './netflix/netflix/netflix.component';
 // Padrão
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,23 +11,35 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TmdbService } from './services/tmdb.service';
 
 // Component
-import { HeaderNetflixComponent } from './header-netflix/header-netflix.component';
+import { HeaderNetflixComponent } from './netflix/header-netflix/header-netflix.component';
 
 // Módulos
-import { HeaderNetflixModule } from './header-netflix/header-netflix.module';
+import { HeaderNetflixModule } from './netflix/header-netflix/header-netflix.module';
+import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './account/login/login.component';
+import { CreateAccountComponent } from './account/create-account/create-account.component';
+import { HomeComponent } from './layout/home/home.component';
+import { AuthenticationComponent } from './layout/authentication/authentication.component';
 
-
+import { FormsModule, NgForm } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderNetflixComponent
+    HeaderNetflixComponent,
+    LoginComponent,
+    CreateAccountComponent,
+    HomeComponent,
+    AuthenticationComponent,
+    NetflixComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    HeaderNetflixModule
+    HeaderNetflixModule,
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [TmdbService, HttpClient],
   bootstrap: [AppComponent]
