@@ -20,8 +20,9 @@ import { LoginComponent } from './account/login/login.component';
 import { CreateAccountComponent } from './account/create-account/create-account.component';
 import { HomeComponent } from './layout/home/home.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
+import {MatIconModule} from '@angular/material/icon';
 
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { FormsModule, NgForm } from '@angular/forms';
     HeaderNetflixModule,
     AppRoutingModule,
     FormsModule,
+    MatIconModule
   ],
   providers: [TmdbService, HttpClient],
   bootstrap: [AppComponent]

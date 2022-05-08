@@ -35,7 +35,6 @@ export class NetflixComponent implements OnInit {
     this.Tmdb.ObtendoOriginais().subscribe((data: FilmesOriginais) => {
       const filmes = data.results
       this.FilmesOriginais = filmes;
-      console.log('Variavel filmes', this.FilmesOriginais)
     }, (error: any) => {
       this.error = error
       console.log('ERROR:', this.error)
@@ -44,11 +43,16 @@ export class NetflixComponent implements OnInit {
 
   ObterFilmesEmAlta() {
     this.Tmdb.ObtendoEmAlta().subscribe((data: FilmesOriginais) => {
+      debugger;
       const EmAlta = data.results;
       let NumberAleatory = Math.floor(Math.random() * 19);
       this.FilmesEmAlta = EmAlta[NumberAleatory];
+      console.log(this.FilmesEmAlta)
       this.FilmesEmAltaPoster = "https://image.tmdb.org/t/p/original/" + this.FilmesEmAlta.backdrop_path
       let DataLancamento = EmAlta[NumberAleatory].release_date
+      if(DataLancamento == undefined) {
+        DataLancamento = EmAlta[NumberAleatory].first_air_date
+      }
       DataLancamento = new Date(DataLancamento);
       this.FilmesEmAltaDate = DataLancamento.getFullYear();
     }, (error: any) => {

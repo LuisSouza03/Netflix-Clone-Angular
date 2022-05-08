@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
   }
 
   async onSubmit() {
+    
     try {
       const result = await this.AccountService.login(this.login);
       console.log(`Login efetuado: ${result}`);
@@ -34,5 +35,6 @@ export class LoginComponent implements OnInit {
       console.error(err)
     }
   }
+
 
 }

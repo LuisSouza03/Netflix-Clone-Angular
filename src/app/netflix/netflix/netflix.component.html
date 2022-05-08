@@ -1,21 +1,24 @@
 <!--Informações do Filme Principal-->
 <main>
-    <div class="filme-principal" style="background-size: cover; background-position: center; background-image: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)), url( {{FilmesEmAltaPoster}} ); ">
-        <section class="featured" ></section>
+    <div class="filme-principal"
+        style="background-size: cover; background-position: center; background-image: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)), url( {{FilmesEmAltaPoster}} ); object-fit: cover; ">
+        <section class="featured"></section>
         <div class="container">
-            <h3 class="titulo"> {{ FilmesEmAlta.title }}</h3>
-            <h5 class="caracteristicas">{{ FilmesEmAlta.vote_average }}  Avalição  {{ FilmesEmAltaDate }}</h5>
+            <h3 class="titulo" *ngIf="FilmesEmAlta.title != null "> {{ FilmesEmAlta.title }}</h3>
+            <h3 class="titulo" *ngIf="FilmesEmAlta.title == undefined "> {{ FilmesEmAlta.name }}</h3>
+
+            <h5 class="caracteristicas">{{ FilmesEmAlta.vote_average }} Avalição {{ FilmesEmAltaDate }}</h5>
             <p class="descricao">
-                
+
                 {{ FilmesEmAlta.overview }}
             </p>
             <div class="botoes">
                 <button role="button" class="botao">
-                    <i class="fas fa-play"></i>
+                    <mat-icon>play_circle_filled</mat-icon>
                     ASSISTIR AGORA
                 </button>
                 <button role="button" class="botao">
-                    <i class="fas fa-info-circle"></i>
+                    <mat-icon>info</mat-icon>
                     MAIS INFORMAÇÕES
                 </button>
             </div>

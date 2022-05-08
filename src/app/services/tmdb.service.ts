@@ -23,7 +23,7 @@ export class TmdbService {
   }
 
   public ObtendoEmAlta(): Observable<any> {
-    return this.http.get(`${API_URL}/movie/top_rated?language=pt-BR&api_key=${API_KEY}`)
+    return this.http.get(`${API_URL}/trending/all/day?language=pt-BR&api_key=${API_KEY}`)
   }
 
 //   obterOriginais(){

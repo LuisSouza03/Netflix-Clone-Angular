@@ -19,3 +19,4 @@ export const environment = {
 
 export const API_KEY : string = "3f8972ff48c327edd722fe5c343f29d6"
 export const API_URL: string = "https://api.themoviedb.org/3"
+export const api : string = "http://localhost:3000"

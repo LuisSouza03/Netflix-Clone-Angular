@@ -9,7 +9,7 @@ export class AccountService {
 
   login(user: any) {
     return new Promise((resolve) => {
-      window.localStorage.setItem('token', 'meu-token');
+      localStorage.setItem('token', 'meu-token');
       resolve(true)
     })
   }
